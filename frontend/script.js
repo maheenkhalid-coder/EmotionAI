@@ -4,7 +4,7 @@
 // No model logic lives here — the prediction always comes from the API.
 // ==========================================================================
 
-const API_URL = "http://127.0.0.1:8000/predict";
+const API_URL = "https://emotionai-nbzi.onrender.com/predict";
 const MAX_CHARS = 500;
 
 // ---- element references ---------------------------------------------------
