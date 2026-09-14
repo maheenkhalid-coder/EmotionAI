@@ -189,6 +189,14 @@ textarea:focus-visible {
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
+
+.wake-message {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
 /* ==========================================================================
    Hero
    ========================================================================== */

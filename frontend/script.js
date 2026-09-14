@@ -21,6 +21,7 @@ const resultSection = document.getElementById("result-section");
 const resultIcon = document.getElementById("result-icon");
 const resultEmotion = document.getElementById("result-emotion");
 const resultDescription = document.getElementById("result-description");
+const wakeMessage = document.getElementById("wake-message");
 
 // ---- emotion presentation map ---------------------------------------------
 // Only affects how a returned emotion is *displayed*.
@@ -87,6 +88,7 @@ function setLoading(isLoading) {
   analyzeBtn.disabled = isLoading;
   analyzeBtn.classList.toggle("is-loading", isLoading);
   btnLabel.textContent = isLoading ? "Analyzing..." : "Analyze Emotion";
+  wakeMessage.hidden = !isLoading;   // ← new line: show/hide with loading state
 }
 
 function showValidationMessage(message) {
