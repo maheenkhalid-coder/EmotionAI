@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmotionAI — NLP Emotion Prediction</title>
+  <meta name="description" content="Enter a sentence and let an NLP model detect the emotion behind it." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12c2-5 6-8 8-8s6 3 8 8-6 8-8 8-6-3-8-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="2.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">EmotionAI</span>
+          <span class="brand-sub">NLP Emotion Prediction</span>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#top">Home</a>
+        <a href="#how-it-works">How It Works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <span class="badge">AI-Powered NLP</span>
+          <h1 class="hero-title">Understand the emotion behind your words</h1>
+          <p class="hero-text">
+            Enter a sentence and let our NLP model analyze the emotion expressed in your text —
+            trained with a bag-of-words vectorizer and a logistic regression classifier.
+          </p>
+          <a href="#analyze" class="btn btn-ghost">Try it below ↓</a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="manuscript">
+            <p class="manuscript-line">
+              <span class="mark mark-joy">I finally got the job</span> I've been
+              <span class="mark mark-love">dreaming about</span> for years.
+            </p>
+            <p class="manuscript-line">
+              Honestly, I'm a little <span class="mark mark-fear">nervous</span> —
+              but mostly, I'm just <span class="mark mark-joy">thrilled</span>.
+            </p>
+            <span class="manuscript-caption">reading between the lines</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALYZE CARD -->
+    <section class="analyze" id="analyze">
+      <div class="wrap">
+        <div class="analyze-card">
+          <h2 class="analyze-title">Analyze your text</h2>
+          <p class="analyze-desc">Write a sentence below and discover the emotion detected by the model.</p>
+
+          <form id="emotion-form" novalidate>
+            <label for="text-input" class="field-label">Your sentence</label>
+            <textarea
+              id="text-input"
+              name="text"
+              rows="5"
+              maxlength="500"
+              placeholder="Type something like: I am really excited about my new job..."
+              aria-describedby="char-count validation-message"
+            ></textarea>
+
+            <div class="field-meta">
+              <p id="validation-message" class="validation-message" role="alert" aria-live="polite"></p>
+              <span id="char-count" class="char-count">0 / 500</span>
+            </div>
+
+            <button type="submit" id="analyze-btn" class="btn btn-primary">
+              <span class="btn-label">Analyze Emotion</span>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="btn-loader" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <p id="error-message" class="error-message" role="alert" aria-live="polite" hidden></p>
+        </div>
+
+        <!-- RESULT -->
+        <div id="result-section" class="result-card" hidden>
+          <span class="result-eyebrow">Detected Emotion</span>
+          <div class="result-main">
+            <span id="result-icon" class="result-icon" aria-hidden="true"></span>
+            <span id="result-emotion" class="result-emotion">—</span>
+          </div>
+          <p id="result-description" class="result-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how-it-works">
+      <div class="wrap">
+        <h2 class="how-title">How it works</h2>
+
+        <ol class="how-steps">
+          <li class="how-step">
+            <span class="how-index">1</span>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20l1.5-5L16 4.5a1.5 1.5 0 0 1 2 0l1.5 1.5a1.5 1.5 0 0 1 0 2L9 18.5 4 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <h3>Write</h3>
+            <p>Enter a sentence or message you want to analyze.</p>
+          </li>
+          <li class="how-step">
+            <span class="how-index">2</span>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <h3>Analyze</h3>
+            <p>Our NLP model processes your text using bag-of-words and logistic regression.</p>
+          </li>
+          <li class="how-step">
+            <span class="how-index">3</span>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3M12 18v3M4.2 12H1M23 12h-3.2M6 6l-2 2M20 6l2 2M6 18l-2-2M20 18l2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/></svg>
+            <h3>Discover</h3>
+            <p>Receive the emotion predicted by the trained model.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>EmotionAI</span>
+      <span class="footer-note">AI-powered emotion detection · Built with NLP & FastAPI</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
