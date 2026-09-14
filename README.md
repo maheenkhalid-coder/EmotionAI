@@ -93,18 +93,20 @@ The model was evaluated using:
 EmotionAI/
 │
 ├── README.md
+├── sentiments_data.txt
+├── EmotionAI.ipynb
+├── emotion_bow_vectorizer.pkl
+├── emotion_label_encoder.pkl
+├── emotion_logistic_regression.pkl
+├── requirements.txt
 │
 ├── backend/
-│   ├── main.py
-│   ├── emotion_logistic_regression.pkl
-│   ├── emotion_bow_vectorizer.pkl
-│   ├── emotion_label_encoder.pkl
-│   └── requirements.txt
+│   └── main.py
 │
 └── frontend/
     ├── index.html
-    ├── style.css
-    └── script.js
+    ├── script.js
+    └── style.css
 ```
 
 ## 🎯 Project Goal
